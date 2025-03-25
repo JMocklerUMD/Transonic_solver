@@ -1,19 +1,19 @@
 ## Transonic flow solver over an NACA00XX airfoil ##
 
-This work attempts to solve the steady aerodynamics over an airfoil in transonic regimes. The goal is to capture local supersonic flow and the associated sonic and shock discontinuities in the flow through numerical solutions to the small disturbance potential equation. The 2D velocity potential equations are first described below:
+This work attempts to solve the steady aerodynamics over an airfoil in transonic regimes. The goal is to capture local supersonic flow and the associated sonic and shock discontinuities in the flow through numerical solutions to the small disturbance potential equation. The 2D velocity potential equations are first described below.
 
 <img src="./Figs/eqn1.png" width="300" height="50">
 
-These may be reduced down by assuming: 
+This may be reduced by assuming: 
 1. Cross-terms, like phi_x*phi_y, are small,
 2. Time-derivatives are zero (i.e, only solving the steady state)
 3. The flow is inviscid, attached, and irrotational.
 
-The reduced equation is then:
+The reduced equation (which is ultimately solved) is:
 
 <img src="./Figs/eqn2.png" width="400" height="50">
 
-This solver uses a "switching" mechanism to solve the equations based on if they're locally elliptic (or subsonic) or hyperbolic (supersonic) to respect the characteristic upwinding of the solution. This is iterated using a SLOR technique to successively relax the solution towards convergence. Finally, under this formulation, the solver can determine the pressure contour in the mesh, local velocity perturbations (from freestream), and the cp along the airfoil surface. Finally, it supports two dirichlet upper boundary conditions: open air or a wind-tunnel approximation. Key details are found in the attached word document, and some example figures are found below:
+This solver uses a "switching" mechanism to solve the equations based on if they're locally elliptic (or subsonic) or hyperbolic (supersonic) to respect the characteristic upwinding of the solution. This is iterated using a SLOR technique to successively relax the solution towards convergence. Under this formulation, the solver can determine the pressure contour in the mesh, local velocity perturbations (from freestream), and the cp along the airfoil surface. Finally, it supports two dirichlet upper boundary conditions: open air or a wind-tunnel approximation. Key details are found in the attached word document, and some example figures are found below:
 
 ![Fig1](./Figs/NACA0010_M080.png)
 
