@@ -2,8 +2,7 @@
 
 This work attempts to solve the steady aerodynamics over an airfoil in transonic regimes. The goal is to capture local supersonic flow and the associated sonic and shock discontinuities in the flow through numerical solutions to the small disturbance potential equation. The 2D velocity potential equations are first described below:
 
-<img src="./Figs/eqn1.png" width="600" height="75">
-![eqn1](./Figs/eqn1.png)
+<img src="./Figs/eqn1.png" width="500" height="50">
 
 These may be reduced down by assuming: 
 1. Cross-terms, like phi_x*phi_y, are small,
@@ -12,7 +11,7 @@ These may be reduced down by assuming:
 
 The reduced equation is then:
 
-![eqn2](./Figs/eqn2.png)
+<img src="./Figs/eqn2.png" width="1000" height="50">
 
 This solver uses a "switching" mechanism to solve the equations based on if they're locally elliptic (or subsonic) or hyperbolic (supersonic) to respect the characteristic upwinding of the solution. This is iterated using a SLOR technique to successively relax the solution towards convergence. Finally, under this formulation, the solver can determine the pressure contour in the mesh, local velocity perturbations (from freestream), and the cp along the airfoil surface. Finally, it supports two dirichlet upper boundary conditions: open air or a wind-tunnel approximation. Key details are found in the attached word document, and some example figures are found below:
 
