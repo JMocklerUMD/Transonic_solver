@@ -11,7 +11,7 @@ These may be reduced down by assuming:
 
 The reduced equation is then:
 
-<img src="./Figs/eqn2.png" width="5000" height="50">
+<img src="./Figs/eqn2.png" width="500" height="50">
 
 This solver uses a "switching" mechanism to solve the equations based on if they're locally elliptic (or subsonic) or hyperbolic (supersonic) to respect the characteristic upwinding of the solution. This is iterated using a SLOR technique to successively relax the solution towards convergence. Finally, under this formulation, the solver can determine the pressure contour in the mesh, local velocity perturbations (from freestream), and the cp along the airfoil surface. Finally, it supports two dirichlet upper boundary conditions: open air or a wind-tunnel approximation. Key details are found in the attached word document, and some example figures are found below:
 
