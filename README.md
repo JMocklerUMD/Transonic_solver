@@ -2,6 +2,7 @@
 
 This work attempts to solve the steady aerodynamics over an airfoil in transonic regimes. The goal is to capture local supersonic flow and the associated sonic and shock discontinuities in the flow through numerical solutions to the small disturbance potential equation. The 2D velocity potential equations are first described below:
 
+<img src="./Figs/eqn1.png" width="100" height="100">
 ![eqn1](./Figs/eqn1.png)
 
 These may be reduced down by assuming: 
